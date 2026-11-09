@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# Monitor apcupsd UPS health and cached power notification gates.
+# Author: Stijn Jonker (sjcjonker) | https://github.com/sjcjonker
+# Usage: python3 check_apcups.py --mode status --endpoint 192.0.2.10:3551 --state /var/lib/nagios/ups/state.json
+# Requires apcaccess; status TTL: 900s, recovery grace: 300s. Help: --help.
+# Nagios exit codes: 0 OK, 1 WARNING, 2 CRITICAL, 3 UNKNOWN.
 """Monitor apcupsd and supply fail-open Nagios power notification gates."""
 from __future__ import annotations
 
